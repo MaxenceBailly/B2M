@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>B2M - Entraînement Bac Maths</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Bac2Math</div>
+                <div class="user-info">
+                    <div class="user-stats">
+                        <span id="username">Élève</span>
+                        <span>Niveau <span id="user-level">1</span></span>
+                        <div class="xp-bar">
+                            <div class="xp-fill" id="xp-fill"></div>
+                        </div>
+                        <span id="xp-text">0/100 XP</span>
+                    </div>
+                    <button class="theme-toggle" id="theme-toggle">🌙</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Page d'accueil -->
+            <div id="home-screen">
+                <div class="welcome-section">
+                    <h1>Entraînement Bac Maths</h1>
+                    <p>Développez vos compétences mathématiques sans calculatrice !</p>
+                </div>
+
+                <div class="modes-grid">
+                    <div class="mode-card available" data-mode="calcul-mental">
+                        <div class="mode-icon">🧮</div>
+                        <h3 class="mode-title">Calcul Mental</h3>
+                        <p class="mode-description">Maîtrisez les opérations de base : addition, soustraction, multiplication et division</p>
+                        <div class="mode-level">Niveau <span id="calcul-level">1</span></div>
+                    </div>
+
+                    <div class="mode-card disabled" data-mode="probabilite">
+                        <div class="mode-icon">🎲</div>
+                        <h3 class="mode-title">Probabilités</h3>
+                        <p class="mode-description">Exercices sur les probabilités et statistiques</p>
+                        <div class="mode-level">Bientôt disponible</div>
+                    </div>
+
+                    <div class="mode-card disabled" data-mode="geometrie">
+                        <div class="mode-icon">📐</div>
+                        <h3 class="mode-title">Géométrie</h3>
+                        <p class="mode-description">Problèmes de géométrie et calculs d'aires</p>
+                        <div class="mode-level">Bientôt disponible</div>
+                    </div>
+
+                    <div class="mode-card disabled" data-mode="algorithmie">
+                        <div class="mode-icon">💻</div>
+                        <h3 class="mode-title">Algorithmie</h3>
+                        <p class="mode-description">Logique algorithmique et résolution de problèmes</p>
+                        <div class="mode-level">Bientôt disponible</div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <h3>Précision Globale</h3>
+                        <svg class="progress-ring">
+                            <circle class="progress-ring-circle" cx="40" cy="40" r="32"></circle>
+                            <circle class="progress-ring-progress" cx="40" cy="40" r="32" id="accuracy-circle"></circle>
+                        </svg>
+                        <div class="stat-value" id="accuracy-percent">0%</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Questions Résolues</h3>
+                        <div class="stat-value" id="total-questions">0</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Série Actuelle</h3>
+                        <div class="stat-value" id="current-streak">0</div>
+                        <div class="stat-label">Bonnes réponses</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Écran de jeu -->
+            <div id="game-screen" class="game-screen">
+                <div class="game-header">
+                    <button class="back-btn" id="back-btn">← Retour</button>
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="game-score">0</div>
+                            <div class="stat-label">Score</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="game-streak">0</div>
+                            <div class="stat-label">Série</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="game-time">0:00</div>
+                            <div class="stat-label">Temps</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question" id="question-text">2 + 3 = ?</div>
+                    <div>
+                        <input type="number" class="answer-input" id="answer-input" placeholder="Réponse">
+                        <button class="submit-btn" id="submit-btn">Valider</button>
+                    </div>
+                    <div class="result-message" id="result-message" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
